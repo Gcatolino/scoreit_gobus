@@ -47,7 +47,7 @@ La tabella \ref{tab:gestioni} mostra, ad alto livello, i principali raggruppamen
 
 L'analisi dei requisiti è poi proceduta tramite la modellazione delle funzionalità identificate in casi d\rq uso. In questo documento, verr\`{a}  proposto un solo caso d\rq uso, così da consentire al lettore di poter comprendere la metodologia di modellazione adottata. In particolare, verr\`{a}  seguita la modellazione del requisito riguardante la ricerca di una linea. 
 
-\begin{figure*}[h]
+\begin{figure*}[tb]
 \centering
 \includegraphics[scale=.7]{img/cd.png}
 \caption{Caso d\rq uso relativo al requisito funzionale che consente la ricerca di una linea.}
@@ -58,18 +58,18 @@ La Figura \ref{fig:cd} mostra il caso d\rq uso relativo al requisito funzionale 
 
 Il successivo step nella modellazione delle funzionalit\`{a} del sistema è consistito nella definizione dei path navigazionali relativi a ciascun raggruppamento di requisiti identificato. Di seguito \`{e} mostrato il path navigazionale che consente ad un utente registrato di muoversi all\rq interno della gestione delle linee, di cui il requisito di ricerca delle linee è incluso.
 
-\begin{figure*}[h]
+\begin{figure}[!h]
 \centering
-\includegraphics[scale=.9]{img/np.png}
+\includegraphics[scale=.4]{img/np.png}
 \caption{Path navigazionale relativo alla gestione delle linee.}
 \label{fig:np}
-\end{figure*} 
+\end{figure} 
 
 Come mostrato in Figura \ref{fig:np}, l'utente, a partire dalla Home Page dell'applicazione, pu\`{o} accedere alla funzionalit\`{a} di Gestione delle Linee, all\rq interno della quale \`{e} data la possibilit\`{a} di accedere i) alla visualizzazione delle linee tramite geo-localizzazione e  ii) visualizzazione della ricerca di una linea. Effettuando il caso d\rq uso mostrato in Figura \ref{fig:cd}, l\rq utente accede alla schermata di visualizzazione delle corse di andata per la linea selezionata, con la possibilit\`{a} di visualizzare anche la corsa di ritorno.\\
 
 Infine, l'ultima parte dell\rq analisi dei requisiti è consistita nella definizione dei mockup delle funzionalit\`{a} identificate. In Figura \ref{fig:ui} \`{e} mostrato il mockup della funzionalit\`{a} di ricerca di una linea, implementato sulla base di una interfaccia per smartphone. 
 
-\begin{figure}[tb]
+\begin{figure}[h]
 \centering
 \includegraphics[scale=.3]{img/ui.png}
 \caption{Screen Mockup della Funzionalit\`{a} di Ricerca di una Linea.}
@@ -108,10 +108,97 @@ Come \`{e} possibile vedere, \emph{GoBus} si compone di tre sottosistemi, che fa
 \end{figure*} 
 
 Infine, \`{e} stato definito il mapping hardware-software. Il Deployment Diagram fornisce un ausilio agli sviluppatori per quanto riguarda l\rq organizzazione delle componenti hardware e software del sistema \emph{GoBus}. In figura \ref{fig:mhs} possiamo vedere quali sono i nodi che interagiscono col sistema: Application Server e il Database Server. Le interfacce dei vari sottosistemi accedono ai pacchetti dell\rq Application Server, in cui risiedono gli oggetti di tipo control ed entity. L\rq accesso al database avviene tramite un sottosistema di storage, per garantire, anche, l’indipendenza di esso; infatti se sorgesse la necessit\`{a} di modificare una qualsiasi componente dell’interfaccia del sottosistema, non vi sarebbe il bisogno di apportare innumerevoli modifiche all’interno del sistema. La comunicazione tra i nodi avviene tramite protocollo HTTP.\\
-Infine, all\rq interno del design \`{e} stato analizzata la metodologia di mantenimento dei dati persistenti, cos\`{i} come il controllo degli accessi. Il dettaglio completo delle attivit\`{a} svolte in questa fase \`{e} nel documento di System Design allegato.
+Per quanto riguarda la base di dati del progetto \`{e} stata modellata sui file in formato General Transit Feed Specification Reference (GTFS). Questo formato \`{e} attualmente utilizzato dalle aziende di trasporto pubblico per la comunicazione dei dati, 
+relativi ai servizi forniti, all\rq applicazione Google Transit. Questo consente alle aziende di 
+fornire informazioni al progetto in modo facile e veloce, senza ridondanza di dati. 
+Google fornisce le linee guida per la formattaione dei dati in questione, identificando un 
+insieme di file. Tra questi ci sono file richiesti e file opzionali, ogni agenzia può decidere 
+quali informazioni fornire in base alle proprie esigenze. \emph{GoBus} si propone di raggruppare 
+in un\rq unica applicazione informazioni su tutte le agenzie di trasporto nazionali, per cui 
+gestisce solo i dati obbligatori più alcune informazioni che non possono essere ignorate 
+se fornite dall\rq agenzia, come ad esempio le eccezioni al calendario delle corse in giorni 
+particolari. Questi file sono:\\
+
+\begin{itemize}
+\item {\bf{agency.txt}}: Uno o pi\`{u} agenzie di transito che forniscono i dati.\\
+\item {\bf{stops.txt}}: Luoghi dove i bus fanno salire o scendere i passeggeri.\\
+\item {\bf{routes.txt}}: Un percorso è un gruppo di viaggi che vengono visualizzati come un unico servizio.\\
+\item {\bf{trips.txt}}: Viaggi per ogni itinerario. Un viaggio è una sequenza di due o più ferma relative ad un viaggio.\\
+\item {\bf{stop\_ times.txt}}: Orario in cui un veicolo arriva ad una fermata, per ogni viaggio.\\
+\item {\bf{calendar.txt}}: Date per i servizi che utilizzano un programma settimanale. Specifica quando viene avviato il servizio e finisce, oltre ai giorni della settimana in cui il servizio\`{e} disponibile.\\
+\item {\bf{calendar\_ dates.txt}}: Date particolari in cui alcuni servizi subiscono una variazione.\\
+\end{itemize}
+All\rq interno degli stessi file, sono indicati dei campi obbligatori e dei campi opzionali.
+Per comprendere la struttura della base di dati la \emph{figura 17} mostra il Diagramma Entità Relazioni.
+
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.4]{img/ER.png}
+\caption{Diagramma Base di Dati}
+\label{fig:ER}
+\end{figure}
+
+Infine, all\rq interno del design \`{e} stato analizzato il controllo degli accessi. 
+Il dettaglio completo delle attivit\`{a} svolte in questa fase \`{e} nel documento di System Design allegato.
 
 \subsection{Implementazione}
+La fase di implementazione ha lo scopo di creare un prodotto software in grado di soddisfare tutti i requisiti individuati nela fase di pianificazione. Nell'ambito del progetto, tale attivit\`{a} viene svolta seguendo un modello evolutivo a prototipi. 
+
+Il primo prototipo implementato ha lo scopo di comprendere al meglio i requisiti del web service e del portale web. In questa fase non \`{e} stato ritenuto necessario implementare il prototipo dell\rq applicazione mobile in quanto essa presenta gli stessi requisiti del portale web. 
+
+In particolare il percorso di sviluppo \`{e} stato il seguente:\\
+- Il web service \`{e} stato implementato in linguaggio php, con l\rq utilizzo di un framework esterno, Slim, il cui scopo è quello di mappare gli url inseriti dall\rq utente in query che presentino le informazioni dal database. In questo modo viene garantito che il web service utilizzi il protocollo rest. I risultati sono forniti in formato JSON.(\emph{figura 18}) \\
+- La web application \`{e} stata realizzata utilizzando Bootstrap [Aggiungere referenza] e il framework jQuery [Aggiungere referenza]. Nel primo prototipo sono state implementate soltanto le funzionalit\`{a} principali, tralasciando la gestione dell\rq utente e degli avvisi.(\emph{figura 19}) \\
+
+\begin{figure*}[tb]
+\centering
+\includegraphics[scale=.3]{img/19.png}
+\caption{Esempio risultato ricerca linea su Web service }
+\label{fig:mhs}
+\end{figure*} 
+
+\begin{figure*}[tb]
+\centering
+\includegraphics[scale=.3]{img/20.png}
+\caption{Esempio risultato ricerca linea su Web application }
+\label{fig:mhs}
+\end{figure*} 
+
+
+Analisi:\\
+Il primo prototipo ha evidenziato di essere inefficiente in quanto alcune query rilevanti hanno mostrato tempi di risposta troppo elevati. A tal proposito sono state valutate diverse alternative, tra cui una diversa architettura della base di dati e l\rq utilizzo di un database ad oggetti come MongoDB\footnote{http://www.mongodb.org/ }.\\
+Il portale web ha chiarito il modo di visualizzazione delle informazioni per quanto riguarda la gestione delle fermate e la gestione delle linee. 
+
+
 
 \subsection{Testing}
+La pianificazione del testing prevede tre tipologie di test: testing di unit\`{a}, testing di integrazione e testing di sistema.\\
+In merito al testing di unit\`{a}, il processo di testing per il progetto "GoBus" verr\`{a} sottoposto ad una tipologia di testing di tipo black-box, ovvero, si stresser\`{a} il sistema dal punto di vista funzionale, analizzando e confrontando gli output derivanti dagli input immessi, con gli output attesi. In combinazione con il testing black-box sar\`{a} utilizzato category partition. Questa tecnica permette di dividere i possibili input in gruppi, i cui elementi generano output logicamente simili. Tali gruppi, identificati come classi di equivalenza, saranno identificati e utilizzati in modo da eseguire almeno un test per ognuno di essi. Per agevolare il testing di regressione, in seguito alla modifica delle componenti software verr\`{a} utilizzato un framework adatto.\\
+Relativamente al testing di integrazione, verr\`{a} adottata una strategia di tipo bottom-up. In sintesi si testeranno le componenti del sistema partendo dal layer più in basso nella gerarchia. L\rq implementazione di tale strategia prevede la costruire di driver test, ovvero di classi che utilizzino in maniera banale le componenti sotto test.\\
+Il testing di sistema verr\`{a} effettuato mediante l\rq analisi empirica statica, ovvero confrontando il comportamento del sistema in esecuzione in relazione al comportamento atteso.\\
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.6]{img/21.png}
+\caption{Esempio Test case }
+\label{fig:mhs}
+\end{figure}  
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.6]{img/22.png}
+\caption{Esempio combinazione Test}
+\label{fig:mhs}
+\end{figure} 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.6]{img/23.png}
+\caption{Esempio category partition }
+\label{fig:mhs}
+\end{figure} 
 
 \subsection{Rilascio}
+Il prototipo viene rilasciato. Si può fare riferimento al video che mostra la demo dell\rq applicazione, (in allegato nel materiale consegnato) e al file zip contenente il codice dell'implementazione.

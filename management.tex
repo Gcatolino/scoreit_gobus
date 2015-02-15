@@ -29,13 +29,31 @@ In ultimo si \`{e} definita e specificata una Requirements Traceability Matrix (
 All’interno della stessa si va a definire il codice del requisito, un rationale che motiva il requisito, la fonte, l\rq autore, la data di raccolta, una priorità ed uno status, oltre a vari riferimenti del requisito all’interno dei diversi documenti e del codice sorgente.
 Il seguente \`{e} un esempio di macro requisito specificato nell’RTM:
 \\
-TABELLE
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.7]{img/1.png}
+\label{fig:cd}
+\end{figure}
 \\
-TABELLE
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.7]{img/2.png}
+\label{fig:cd}
+\end{figure}
 \\
-TABELLE
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.7]{img/3.png}
+
+\label{fig:cd}
+\end{figure}
 \\
-TABELLE
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.7]{img/4.png}
+\caption{Esempio di RTM}
+\label{fig:cd}
+\end{figure}
 \\
 Nella tabella ADL e FF rappresentano rispettivamente il prof. Andrea De Lucia e la proff.ssa Filomena Ferrucci ritenuti nell\rq ambito del progetto stakeholder e top management.
 Il Requirements Management Plan \`{e} risultato quindi fondamentale per la definizione del RAD, descritto nella sezione Software, in cui vengono appunto specificati tutti i requisiti.
@@ -45,9 +63,12 @@ Viste le ridotte dimensioni del team lo stesso è incaricato di valutare i cambi
 Nello specifico, il Project Manager di turno è il Configuration Manager designato. Il ruolo di sviluppatore e auditor è di volta in volta assegnato a membri del team diversi.
 Change Control Board è l’intero team che è incaricato di valutare l’impatto e schedulare le modifiche da apportare.
 I Configuration Items (CI) vengono quindi decisi nelle primissime fasi del progetto. Tra questi è risultato necessario includere: 
-\\
-TABELLA
-\\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.7]{img/5.png}
+\caption{Configuration Item}
+\label{fig:cd}
+\end{figure}
 Ovviamente altri CI possono essere inclusi in ogni momento se ritenuto necessario.
 Le richieste formali di cambiamento non sono schedulate, e possono quindi essere fatte in qualsiasi momento. Questa scelta è motivata dal fatto che lo scope del progetto è ben chiaro così come i requisiti iniziali, per cui modifiche in corso d’opera non vanno a stravolgere il sistema progettato.
 Fondamentale è risultata anche la scelta di un repository software sul quale è possibile tener traccia delle diverse versioni del software, tra cui appunto le versioni baselined. Lo stesso DB verrà caricato su repository insieme al codice sorgente e le versioni baselined verranno specificate in appositi documenti, così come le richieste formali di cambiamento e delle modifiche apportate alle baseline.
@@ -60,17 +81,19 @@ Per quanto riguarda la WBS, essa è stata realizzata mediante brainstorming da p
 In particolare è stato utile un misto di approcci di visualizzazione tra funzionale e per componenti di progetto. Nel primo caso ci si è serviti dei 5 process groups definiti dal PMI nel PMBOK 5, nel secondo caso ci si è basati sia su documenti di Management che tipici dell’Ingegneria del Software.
 Questo approccio ci ha consentito di rilevare alcuni dettagli non rilevati in prima battuta. 
 Il formato finale della WBS è di tipo gerarchico. Ovviamente si tratta di una WBS grossolana che verrà raffinata con l’avanzare del progetto. Non risulta infatti critica la definizione con largo anticipo dei task e delle responsabilità sui singoli task se non per stima dei tempi di progetto.
-La seguente immagine mostra la WBS elaborata:
-\\
-TABELLA
-\\
-Sulla base della WBS si è poi passato alla realizzazione dello scheduling delle attività.
+La \emph{figura 3} mostra la WBS elaborata.
+
+\begin{figure*}[tp]
+\centering
+\includegraphics[scale=.6]{img/6.png}
+\caption{WBS}
+\label{fig:cd}
+\end{figure*}
+
+Sulla base di quest'ultima si è poi passato alla realizzazione dello scheduling delle attività.
 Come già accennato in precedenza alcune attività sono state effettuate in contemporanea con altre. Dall’esperienza maturata su progetti precedenti si è riuscito stabilire una durata approssimativa delle diverse attività, soprattutto relative alla fase di initiating e planning.
 Inoltre è stato considerato uno slack time aggiuntivo per le diverse attività.
-\\
-TABELLA
-\\
-Per la schedulazione si è tenuto principalmente conto delle deadlines imposte da Score-IT e dagli impegni relativi allo studio di ogni componente del team.
+Per la schedulazione (presente nell\rq SPMP in allegato) si  tenuto principalmente conto delle deadlines imposte da Score-IT e dagli impegni relativi allo studio di ogni componente del team.
 Si è inoltre tenuto conto anche della presenza, fondamentale, di un corso di sviluppo applicazioni mobili al secondo semestre, per cui la fine del progetto è stata prevista per il 30/06/2015.
 Sia la WBS che lo scheduling vengono specificate nella sezione Project Planning dell’SPMP. In questa sezione viene inoltre specificato, tra i vari aspetti, quello legato al training.
 Infatti la realizzazione di un App per Windows Phone comporta 
@@ -78,30 +101,29 @@ l\rq apprendimento da parte dei membri del team di tecnologie non conosciute al 
 In contemporanea con la realizzazione della WBS si è proceduto con la realizzazione del Quality Plan (QP). 
 Il QP è stato redatto in questa fase del progetto in quanto è importante avere uno scope chiaro e dei requisiti funzionali e non funzionali chiari in modo da rispettare degli obiettivi di qualità che si relazionino ai requisiti.
 Per cui la base di tale QP è stato il RAD, l’SPMP e lo SoW.
-Lo standard di riferimento è stato l’ISO/IEC 9126 che definisce un modello di qualità del software. In particolare, tale standard definisce sei categorie di qualità, ulteriormente suddivise in sotto categorie secondo una struttura gerarchica.
-Nell’immagine sotto riportata sono rappresentate le sotto categorie considerate di maggior importanza per garantire la qualità del progetto.
-In virtù di quanto detto si è effettuato un trade-off di quelli che possono essere attributi di qualità più rilevanti rispetto ad altri in una scala numerica da 1 a 5 dove quest’ultimo rappresenta il massimo grado di rilevanza. La tabella sottostante è un estratto dal documento di QP:
-\\
-TABELLA
-\\
-Da come si evince dall’immagine, si è deciso di dare una forte rilevanza all’aspetto della funzionalità soprattutto per quanto riguarda l’accuratezza.
+Lo standard di riferimento è stato l’ISO/IEC 9126 che definisce un modello di qualità del software. In particolare, tale standard definisce sei categorie di qualità, ulteriormente suddivise in sotto categorie secondo una struttura gerarchica. Si è deciso di dare una forte rilevanza all’aspetto della funzionalità soprattutto per quanto riguarda l’accuratezza.
 Questo consentirà agli utenti finali di poter ottenere le informazioni nel modo più dettagliato e preciso possibile, tenendo ovviamente conto di aspetti collegati alla sicurezza delle informazioni sensibili dell’utente ed una adeguatezza delle funzionalità a quello che è lo scopo del sistema.
 Si è deciso inoltre di garantire un alta operabilità garantendo all’utente un alto controllo delle funzionalità oltre che fornire un buon grado di apprendibilità.
 Da come si potrà evincere dai mock-up allegati al RAD l’applicazione risulterà particolarmente semplice ed immediata.
 Particolare importanza è stata data all’aspetto di Comportamento temporale. Il sistema infatti dovrà essere in grado di fornire una risposta in tempi particolarmente brevi, 1-2 sec.
 Questo ovviamente comporterà l’utilizzo di tecnologie particolarmente performanti, non utilizzate per la prima prototipazione ma utilizzate in seguito e specificate nella sezione Software.
 Inoltre l’aspetto collegato alla manutenzione è stato ritenuto fondamentale. Il garantire infatti il servizio agli utenti nel corso del tempo dipende da un elevato grado di manutenibilità del sistema e quindi di una modularità e grado di design elevato del sistema stesso.
-Importante è stata la definizione di quelli che sono i ruoli per garantire un corretto Quality Management.
-Si riporta un grafico dell’organizzazione della qualità nell’ambito del progetto:
-\\
-TABELLA
-\\
+Importante è stata la definizione di quelli che sono i ruoli per garantire un corretto Quality Management mostrati in \emph{figura 4}.
+\begin{figure*}[tp]
+\centering
+\includegraphics[scale=.7]{img/10.png}
+\caption{Organizzazione team}
+\label{fig:cd}
+\end{figure*}
 Si è deciso di stabilire il ruolo di un Verification \& Validation Manager in modo da garantire la redazione di checklist ad hoc per artefatto sulla base di quanto specificato nel QP.
 Oltre alla definizione dei ruoli, nel QP è stato anche definito un Communication Plan. Questo definisce le modalità di comunicazione tra i membri di tipo formale, ovvero tramite Google Groups.
 Nel QP viene inoltre definito il workflow che la redazione dei documenti segue nel progetto. Il seguente grafico mostra lo schema adottato:
-\\
-TABELLA
-\\
+\begin{figure}[tp]
+\centering
+\includegraphics[scale=.5]{img/11.png}
+\caption{Workflow qualit\`{a}}
+\label{fig:cd}
+\end{figure}
 Compito del Quality Manager è quindi quello di definire dei Template da utilizzare per i documenti. Tali template sono quindi utilizzati dai membri del team nella redazione dei documenti.
 In questo caso il documento viene definito come draft. Terminata l’elaborazione è compito del team di revisione predisposto effettuare una revisione formale del documento sulla base delle checklist preparate dal Quality Manager o dal V\& V Manager. 
 Se tale revisione ha esito positivo il documento può essere rilasciato, altrimenti deve essere modificato rispettando quella che è la checklist compilata dal team di revisione predisposto.
@@ -113,10 +135,12 @@ Tuttavia, considerato che C\# presenta notevoli similitudini con il linguaggio J
 Sicuramente come parametro verrà tenuto in considerazione la presenza di commenti a metodi, classi e variabili ove queste non siano di immediata comprensione.
 Per il reporting e l’issue tracking del codice si utilizzeranno i sistemi integrati in BitBucket che è la repository git utilizzata per il codice sorgente nell’ambito del progetto.
 Dal momento che tale documento è stato redatto insieme col Risk Management Plan (RiMP) è risultato altrettanto rilevante includere in una apposita sezione del QP i rischi riguardanti la qualità di progetto:
-\\
-TABELLA
-\\
-
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.7]{img/12.png}
+\caption{Rischi}
+\label{fig:cd}
+\end{figure}
 L’impatto sulla qualità è riportato in categorie qualitative da Serio a Insignificante, dal più grave al meno grave.
 Come già detto in precedenza, visto il legame tra Quality e Verification and Validation, i due plan sono stati redatti parallelamente.
 Il V\& V Plan ha lo scopo di predisporre delle linee guida per la verifica e la validazione di un artefatto prima di essere definito baselined.
@@ -125,9 +149,12 @@ Per cui vi sarà una fase di pianificazione in cui verranno elaborate le checkli
 Nella fase di review i revisori hanno il compito di verificare che l’artefatto sia conforme a quanto definito nel QP.
 Se l’artefatto non è accettato allora vi è una fase di rework in cui esso deve essere adeguato rispetto a quanto stabilito nella checklist.
 Il diagramma seguente riporta le fasi del processo di revisione degli artefatti prodotti nell’ambito del progetto del sistema:
-\\
-TABELLA
-\\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.6]{img/13.png}
+\caption{Diagramma fasi di revisione}
+\label{fig:cd}
+\end{figure}
 Alcune checklist vengono proposte in seguito nel documento. Ovviamente tali checklist e quindi monitoraggio degli artefatti, rientra nella normale esecuzione delle fasi del progetto così come descritto nel PMBOK 5 e nello specifico nella fase di Monitoring and Controlling.
 Il QP e il VVP fanno sì che venga aggiornata la sezione 8 del SPMP nella quale rientrano informazioni sulla verifica e validazione e qualità.
 La rilevanza data all’aspetto della qualità rientra nell’ottica dell’ottenimento di un prodotto che sia conforme a quelle che possano essere le aspettative dell’utente finale.
@@ -137,44 +164,43 @@ Un ulteriore sforzo da parte del team è stato fatto per la creazione del Risk M
 Seppur il progetto è di piccole dimensioni si è ritenuto fondamentale predisporre un piano per l’identificazione, la valutazione, il monitoraggio dei rischi.
 Infatti nonostante la nostra breve esperienza dai precedenti corsi è subito risultato evidente come il sottovalutare dei rischi ha portato in seguito a problemi, come ritardi nei tempi di consegna o addirittura fine prematura del progetto.
 Innanzitutto si è proceduto con l’individuare delle categorie di valutazione per quanto riguarda la probabilità e l’impatto di un rischio.
-Un primo meeting ci ha quindi portato alle seguenti categorie per quanto riguarda la probabilità di accadimento di un rischio:
-\\
-TABELLA
-\\
-E alle seguenti categorie di impatto:
-\\
-TABELLA
-\\
-A partire dalle seguenti categorie si è poi sviluppata una matrice degli indici compositi (Composite Risk Index):
-\\
-TABELLA
-\\
+Un primo meeting ci ha quindi portato a categorizzare la probabilità di accadimento di un rischio e il suo impatto.
 Attraverso una fase di brainstorming e benchmarking con progetti precedenti si sono identificati una serie di rischi da valutare. 
 In un ulteriore meeting, un moderatore ha sottoposto ad ogni membro del team la lista dei rischi chiedendo di valutarne l’impatto e la probabilità. Le risposte anonime, sono state raccolte effettuandone una convergenza verso valori unici.
 Per alcuni rischi è stato necessaria altra discussione, per altri invece la convergenza era ampia. Questa tecnica viene definita come tecnica Delphi.
 La risultante è la seguente tabella dei rischi:
-\\
-TABELLA
-\\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.6]{img/17.png}
+\caption{Tabella dei rischi}
+\label{fig:cd}
+\end{figure}
 Il rischio riguardante gli skills insufficienti è stato ritenuto di impatto basso in quanto i membri del team hanno effettuato un’autovalutazione asserendo di essere in grado di colmare il gap in tempi brevi. Questo supportato soprattutto dalla presenza di un corso di Sviluppo Applicazioni Mobili al secondo semestre.
 Per ogni rischio è stato predisposto un breve piano di contingenza da attuare nel caso si verifichi e delle azioni per mitigare i trigger che scatenano i rischi. Vista la dimensione del progetto e l’assenza di un budget economico non si è ritenuto necessario predisporre piani dettagliati.
-\\
-TABELLA
-\\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.6]{img/18.png}
+\caption{Piano di contigenza}
+\label{fig:cd}
+\end{figure}
 Il RiMP oltre a comportare un aggiornamento dell’SPMP ha permesso la creazione di un Risk Register (RiR) sul quale sono riportati i rischi da monitorare durante la fase di esecuzione del progetto.
 Tale RiR verrà aggiornato costantemente mano a mano che il progetto progredisce, aggiornando sia la probabilità di accadimento sia l’impatto.
 Da quanto descritto finora si può notare come l’SPMP subisca modifiche mano a mano che i vari piani vengono elaborati. Altra sezione da considerare è la definizione della consegna del prodotto. Così come specificato sin dalla prima definizione dell’SPMP, il prodotto è dapprima prototipato con una versione web-based in cui sono presenti alcune funzionalità di base, successivamente tale prototipo verrà evoluto creando la versione finale del sito web, accompagnata da un app principale per Windows Phone. Entrambe si interfacceranno con un web service restful.
 
 \subsection{Esecuzione}
-Durante la fase di esecuzione, così come definito nello scheduling, vengono elaborate le deliverables principali:
-•	SDD
-•	ODD
-•	Codice Sorgente:
-o	Web Service
-o	App per Windows Phone
-o	Sito Web
-•	Database
-•	Test Plan
+Durante la fase di esecuzione, così come definito nello scheduling, vengono elaborate le deliverables principali:\\
+\begin{itemize}
+\item SDD
+\item ODD
+\item Codice Sorgente:
+\begin{itemize}
+\item Web Service
+\item App per Windows Phone
+\item Web application
+\end{itemize}
+\item Database
+\item Test Plan
+\end{itemize}
 La base di partenza è ovviamente tutta la documentazione di Management prodotta nella fase di Initiating e Planning. Fondamentale risulta il RAD da cui partire per una prima decomposizione del sistema in sottosistemi.
 Questa fase verrà quindi descritta in dettaglio nella sezione riguardante il software in cui sono descritti i vari documenti riportati sopra tra cui il RAD.
 
@@ -182,12 +208,11 @@ Questa fase verrà quindi descritta in dettaglio nella sezione riguardante il so
 \subsection{Monitoraggio e Controllo}
 Il monitoraggio e controllo è una fase che ha inizio insieme alla fase di pianificazione e dura fino alla fase di chiusura, è una fase dove si valuta l’avanzamento dei lavori e si attua il piano che è stato concepito nel Verification \& Validation Plan seguendo le metriche di misurazione di qualità definite nel Quality Plan. In pratica durante le fasi di pianificazione e esecuzione tramite l’utilizzo di checklist definite nel V \& V si revisionano i documenti creati. Vi sono diverse tipologie di checklist quelle per i documenti, dove vi è un componente del team che compila le checklist e quando termina invia le checklist al creatore del documento che la controlla e decide di accettarla e apportare le modifiche richieste. Di seguito il template utilizzato per la checklist di revisione dei documenti:\\
 
-\begin{figure*}[!h]
+\begin{figure}[h]
 \centering
-
-\includegraphics[scale=.6]{img/checklist.png}
+\includegraphics[scale=.5]{img/checklist.png}
 \caption{Checklist valutazione generica documento}
-\end{figure*}
+\end{figure}
 
  Altre tipologie di checklist che abbiamo definito sono per la raccolta e analisi dei requisiti, stima dei costi e dei tempi, software configuration management, risk management, quality assurance e  testing. La compilazione di queste checklist da parte del team porta a una chiara misurazione della qualità del progetto, per maggiori dettagli sulle checklist invito a consultare il documento Verification \& Validation Plan. Dopo questa analisi che ci ha permesso di monitorare il progetto sono stati redatti dei management e quality report per capire appunto cosa doveva essere revisionato e aggiornato, un esempio nel quality report:\\
  
@@ -200,13 +225,5 @@ Il monitoraggio e controllo è una fase che ha inizio insieme alla fase di piani
 Dove B sta a indicare che il documento è stato accettato ma vanno apportate lievi modifiche.
 
 \subsection{Chiusura}
-Una volta che arriveremo alla fase di chiusura di progetto e quindi aver ottenuto il risultato sulla base delle specifiche date in input, si procederà con la stesura della post-mortem review ovvero un deliverable per analizzare gli elementi del progetto e capire se sono stati di successo o di insuccesso. Template che sarà utilizzato per la post-mortem Review:\\
-
-\begin{figure*}[!h]
-\centering
-\includegraphics[scale=.6]{img/postmortem.png}
-\caption{Tabella valutazione finale}
-\end{figure*}
-
-Dopo aver dato il proprio giudizio vi sono una serie di domande aperte che riguardano lesson learned e considerazioni finali.
+Una volta che arriveremo alla fase di chiusura di progetto e quindi aver ottenuto il risultato sulla base delle specifiche date in input, si procederà con la stesura della post-mortem review ovvero un deliverable per analizzare gli elementi del progetto e capire se sono stati di successo o di insuccesso. Dopo aver dato il proprio giudizio vi sono una serie di domande aperte che riguardano lesson learned e considerazioni finali.
 La post-mortem review ci aiuterà nel gestire futuri rischi già incotrati in questo progetto quindi migliorando le nostre skill dal punto di vista del risk management e delle Best Practice.
