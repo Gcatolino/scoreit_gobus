@@ -13,9 +13,9 @@ In questa fase \`{e} stato inizializzato il progetto puntando, da un lato, a def
 Dopo aver creato le basi del team di progetto, si \`{e} definito lo Statement of Work (SoW), che racchiude le caratteristiche che dovr\`{a} avere il progetto, ovvero le \emph{business need}, le funzionalit\`{a} chiave e il piano strategico che si punta ad ottenere con GoBus. Per quanto riguarda i Business needs come definito anche da ITIL® \cite{ITIL}, \emph{``ogni servizio deve avere una giustificazione''} per questo motivo all\rq interno di un progetto \`{e} fondamentale identificarli e renderli protagonisti della strategia di sviluppo del progetto. Tra i Business needs citati nello Statement of work abbiamo ad esempio la fruibilit\`{a} dell\rq informazione, vitale \`{e} la knowledge sharing, ovvero la diffusione della conoscenza e informazione tramite il servizio offerto. Dallo Statement of work \`{e} gi\`{a} possibile iniziare a tirar fuori i requisiti funzionali che saranno successivamente identificati meglio all\rq interno del Requirements Analysis Document.
 
 \subsection{Pianficazione}
-Nella fase di Planning si \`{e} racchiuso tutto il lavoro di pianificazione per quanto riguarda le attivit\`{a} di progetto da svolgere. Passo fondamentale \`{e} stato la realizzazione del Software Project Management Plan (SPMP). Per la realizzazione di quest\rq ultimo si \`{e} seguito quello che \`{e} lo standard ISO-IEC-IEEE 16326-2009 \footnote{http://standards.ieee.org/findstds/standard/16326-2009.html} cercando di rispettare le voci specificate dallo standard.
+Nella fase di Planning si \`{e} racchiuso tutto il lavoro di pianificazione per quanto riguarda le attivit\`{a} di progetto da svolgere. Passo fondamentale \`{e} stato la realizzazione del Software Project Management Plan (SPMP). Per la realizzazione di quest\rq ultimo si \`{e} seguito quello che \`{e} lo standard ISO-IEC-IEEE 16326-2009\footnote{http://standards.ieee.org/findstds/standard/16326-2009.html} cercando di rispettare le voci specificate dallo standard.
 Il Software Project Management Plan (SPMP) \`{e} stato realizzato attraverso la collaborazione tra i quattro componenti del team, sulla base delle esperienze maturate dai singoli e da tecniche facilitative quali brainstorming.
-In particolare ci si \`{e} basati sul documento di Statement of Work dal quale \`{e} stato possibile comprendere le deliverables del progetto da realizzare incluse nell\rq apposita sezione dell\rq SPMP.
+In particolare ci si \`{e} basati sul documento di Statement of Work dal quale \`{e} stato possibile comprendere le deliverable del progetto da realizzare incluse nell\rq apposita sezione dell\rq SPMP.
 Ovviamente il documento \`{e} stato aggiornato pi\`{u} volte con l\rq avanzare del progetto. In questo senso, lo scope del progetto \`{e} stato ricavato a partire proprio dalle business needs elaborate e descritte nel documento.
 A partire da queste si \`{e} quindi potuto elaborare una descrizione dello scope che \`{e} stata inclusa nell\rq SPMP ed in documenti quali il RAD.
 Nella sezione Project Context dell\rq SPMP si \`{e} proceduto alla descrizione del modello di processo adottata nell\rq ambito del progetto e alle modalit\`{a} di miglioramento del processo.
@@ -82,22 +82,22 @@ Per quanto riguarda la WBS, essa \`{e} stata realizzata mediante brainstorming d
 In particolare \`{e} stato utile un misto di approcci di visualizzazione tra funzionale e per componenti di progetto. Nel primo caso ci si \`{e} serviti dei 5 process groups definiti dal PMI nel PMBOK 5, nel secondo caso ci si \`{e} basati sia su documenti di Management che tipici dell\rq Ingegneria del Software.
 Questo approccio ci ha consentito di rilevare alcuni dettagli non rilevati in prima battuta. 
 Il formato finale della WBS \`{e} di tipo gerarchico. Ovviamente si tratta di una WBS grossolana che verr\`{a} raffinata con l\rq avanzare del progetto. Non risulta infatti critica la definizione con largo anticipo dei task e delle responsabilit\`{a} sui singoli task se non per stima dei tempi di progetto.
-La \emph{figura 3} mostra la WBS elaborata.
+La figura \ref{fig:wbs} mostra la WBS elaborata.
 
 \begin{figure*}[tp]
 \centering
 \includegraphics[scale=.6]{img/6.png}
 \caption{WBS}
-\label{fig:cd}
+\label{fig:wbs}
 \end{figure*}
 
 Sulla base di quest\rq ultima si \`{e} poi passato alla realizzazione dello scheduling delle attivit\`{a}.
 Come gi\`{a} accennato in precedenza alcune attivit\`{a} sono state effettuate in contemporanea con altre. Dall\rq esperienza maturata su progetti precedenti si \`{e} riuscito stabilire una durata approssimativa delle diverse attivit\`{a}, soprattutto relative alla fase di initiating e planning.
 Inoltre \`{e} stato considerato uno slack time aggiuntivo per le diverse attivit\`{a}.
-Per la schedulazione (presente nell\rq SPMP in allegato) si \`{e} tenuto principalmente conto delle deadlines imposte da Score-IT e dagli impegni relativi allo studio di ogni componente del team.
+Per la schedulazione (presente nell\rq SPMP in allegato) si \`{e} tenuto principalmente conto delle deadline imposte da Score-IT e dagli impegni relativi allo studio di ogni componente del team.
 Si \`{e} inoltre tenuto conto anche della presenza, fondamentale, di un corso di sviluppo applicazioni mobili al secondo semestre, per cui la fine del progetto \`{e} stata prevista per il 30/06/2015.
 Sia la WBS che lo scheduling vengono specificate nella sezione Project Planning dell\rq SPMP. In questa sezione viene inoltre specificato, tra i vari aspetti, quello legato al training.
-Infatti la realizzazione di un\rq App per Windows Phone comporta l\rq apprendimento da parte dei membri del team di tecnologie non conosciute al momento, tra cui C\# e la conoscenza dell\rq ambiente di sviluppo .NET. In contemporanea con la realizzazione della WBS si \`{e} proceduto con la realizzazione del Quality Plan (QP). Il Quality Plan (QP) \`{e} stato redatto in questa fase del progetto in quanto \`{e} importante avere uno scope chiaro e dei requisiti funzionali e non funzionali chiari in modo da rispettare degli obiettivi di qualit\`{a} che si relazionino ai requisiti. Per cui la base di tale QP \`{e} stato il RAD, l\rq SPMP e lo SoW.
+Infatti la realizzazione di un\rq applicazione per \emph{Windows Phone} comporta l\rq apprendimento da parte dei membri del team di tecnologie non conosciute al momento, tra cui \emph{C\#} e la conoscenza dell\rq ambiente di sviluppo \emph{.NET}. In contemporanea con la realizzazione della WBS si \`{e} proceduto con la realizzazione del Quality Plan (QP). Il Quality Plan (QP) \`{e} stato redatto in questa fase del progetto in quanto \`{e} importante avere uno scope chiaro e dei requisiti funzionali e non funzionali chiari in modo da rispettare degli obiettivi di qualit\`{a} che si relazionino ai requisiti. Per cui la base di tale QP \`{e} stato il RAD, l\rq SPMP e lo SoW.
 Lo standard di riferimento \`{e} stato ISO/IEC 9126 che definisce un modello di qualit\`{a} del software. In particolare, tale standard definisce sei categorie di qualit\`{a}, ulteriormente suddivise in sotto categorie secondo una struttura gerarchica. Si \`{e} deciso di dare una forte rilevanza all\rq aspetto della funzionalit\`{a} soprattutto per quanto riguarda l\rq accuratezza.
 Questo consentir\`{a} agli utenti finali di poter ottenere le informazioni nel modo pi\`{u} dettagliato e preciso possibile, tenendo ovviamente conto di aspetti collegati alla sicurezza delle informazioni sensibili dell\rq utente ed una adeguatezza delle funzionalit\`{a} a quello che \`{e} lo scopo del sistema.
 Si \`{e} deciso inoltre di garantire un\rq alta operabilit\`{a} garantendo all\rq utente un alto controllo delle funzionalit\`{a} oltre che fornire un buon grado di apprendibilit\`{a}.
@@ -127,10 +127,10 @@ Se tale revisione ha esito positivo il documento pu\`{o} essere rilasciato, altr
 Nel nostro caso il ruolo di team di revisione spetta ad uno o due membri designati dal project manager incaricati di rivedere un documento. Ovviamente nel team non rientra il membro redattore del documento in questione.
 Si \`{e} deciso di specificare, in ogni documento, una revision history indicando redattore, data e tipologie di modifiche effettuate, una pagina di intestazione indicante titolo del documento, nome progetto, versione. 
 Inoltre vengono indicati font da utilizzare, grandezza, tipologie di intestazioni di paragrafi etc.
-Per quanto concerne il software al momento non sono state specificate modalit\`{a} di verifica dello stesso. Questo \`{e} dovuto alla non conoscenza delle tecnologie che saranno adoperate, in particolare C\# e l\rq ambiente .NET, per cui al momento non risulta facile prendere delle decisioni in merito.
-Tuttavia, considerato che C\# presenta notevoli similitudini con il linguaggio Java si pu\`{o} pensare di utilizzare delle metriche statiche del codice oltre che delle metriche specifiche per linguaggi ad oggetti.
+Per quanto concerne il software al momento non sono state specificate modalit\`{a} di verifica dello stesso. Questo \`{e} dovuto alla non conoscenza delle tecnologie che saranno adoperate, in particolare \emph{C\#} e l\rq ambiente \emph{.NET}, per cui al momento non risulta facile prendere delle decisioni in merito.
+Tuttavia, considerato che \emph{C\#} presenta notevoli similitudini con il linguaggio \emph{Java} si pu\`{o} pensare di utilizzare delle metriche statiche del codice oltre che delle metriche specifiche per linguaggi ad oggetti.
 Sicuramente come parametro verr\`{a} tenuto in considerazione la presenza di commenti a metodi, classi e variabili ove queste non siano di immediata comprensione.
-Per il reporting e l\rq issue tracking del codice si utilizzeranno i sistemi integrati in BitBucket che \`{e} la repository git utilizzata per il codice sorgente nell\rq ambito del progetto.
+Per il reporting e l\rq issue tracking del codice si utilizzeranno i sistemi integrati in BitBucket, la piattaforma web utilizzata per la gestione del repository del codice sorgente nell\rq ambito del progetto.
 Dal momento che tale documento \`{e} stato redatto insieme col Risk Management Plan (RiMP) \`{e} risultato altrettanto rilevante includere in una apposita sezione del QP i rischi riguardanti la qualit\`{a} di progetto:
 \begin{figure}[h]
 \centering
@@ -185,7 +185,7 @@ Il RiR verr\`{a} aggiornato costantemente mano a mano che il progetto progredisc
 Da quanto descritto finora si pu\`{o} notare come l\rq SPMP subisca modifiche mano a mano che i vari piani vengono elaborati. Altra sezione da considerare \`{e} la definizione della consegna del prodotto. Cos\`{i} come specificato sin dalla prima definizione dell\rq SPMP, il prodotto \`{e} dapprima prototipato con una versione web-based in cui sono presenti alcune funzionalit\`{a} di base, successivamente tale prototipo verr\`{a} evoluto creando la versione finale del sito web, accompagnata da un app principale per Windows Phone. Entrambe si interfacceranno con un web service restful.
 
 \subsection{Esecuzione}
-Durante la fase di esecuzione, cos\`{i} come definito nello scheduling, vengono elaborate le deliverables principali:\\
+Durante la fase di esecuzione, cos\`{i} come definito nello scheduling, vengono elaborate le deliverable principali:\\
 \begin{itemize}
 \item SDD
 \item ODD
