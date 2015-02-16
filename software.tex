@@ -1,7 +1,14 @@
 Questa sezione descrive il processo di sviluppo adottato nell\rq ambito del progetto \emph{GoBus}.
 
 \subsection{Modello del Ciclo di Vita}
-Il ciclo di vita è stato scelto in base alle tempistiche e agli obiettivi del progetto. In particolare, considerata la necessita di comprendere meglio i requisiti che il committente richiedeva \`{e} stato scelto un modello \emph{evolutivo a prototipazione}. Questo modello consente di fornire al committente un prototipo del sistema in tempi rapidi. In questo modo, \`{e} possibile avere feedback periodici utili per la continuazione delle attivit\`{a} progettuali.
+Il ciclo di vita è stato scelto in base alle tempistiche e agli obiettivi del progetto. In particolare, considerata la necessita di comprendere meglio i requisiti che il committente richiedeva \`{e} stato scelto un modello \emph{evolutivo a prototipazione}. Questo modello consente di fornire al committente un prototipo del sistema in tempi rapidi. La scelta di questo modello \`{e} stata dettata dalle caratteristiche del progetto da realizzare, ovvero:
+\begin{itemize}
+\item dalla sua natura interattiva;
+\item dall\rq importanza dell\rq usabilit\`{a};
+\item dalle dimensioni poco estese;
+\item dalla struttura altamente modularizzata che prevede bassi costi di manutenzione.
+\end{itemize}
+L\rq uso di questo modello permette di avere feedback periodici utili per la continuazione delle attivit\`{a} progettuali.
 
 \subsection{Requirement Elicitation and Analysis}
 La fase di requirement elicitation consiste nella comprensione delle necessit\`{a} del committente al fine di collezionare i requisiti del sistema. Nell\rq ambito del progetto, tale attivit\`{a} \`{e} stata svolta facendo brainstorming con tutti gli stakeholder interessati. In particolare, sono stati organizzati incontri sia con i coordinatori del progetto sia con aziende di trasporto locali. Per mitigare il richio di errata comprensione delle reali necessit\`{a} degli stakeholder, i meeting si sono ripetuti cos\`{i} che, ad ogni incontro, i requisiti potessero essere meglio fissati. Il numero totale di incontri tenuti con gli stakeholder \`{e} stato pari a tre.\\
@@ -195,7 +202,7 @@ In particolare il percorso di sviluppo \`{e} stato il seguente:\\
 \label{fig:mhs}
 \end{figure*} 
 
-Il primo prototipo ha evidenziato di essere inefficiente in quanto alcune query rilevanti hanno mostrato tempi di risposta troppo elevati. A tal proposito sono state valutate diverse alternative, tra cui una diversa architettura della base di dati e l\rq utilizzo di un database ad oggetti come MongoDB\footnote{http://www.mongodb.org/ }. Il portale web ha permesso di chiarire le modalit\`{a} di visualizzazione delle informazioni per quanto riguarda la gestione delle fermate e la gestione delle linee. 
+Il primo prototipo ha evidenziato di essere inefficiente in quanto alcune query rilevanti hanno mostrato tempi di risposta troppo elevati. A tal proposito sono state valutate diverse alternative, tra cui una diversa architettura della base di dati e l\rq utilizzo di un database ad oggetti come MongoDB\footnote{http://www.mongodb.org/ }. Tra le caratteristiche che suggeriscono l\rq adeguatezza di questo database si sottolineano l\rq architettura distribuita e la performance date dalla sua natura ad oggetti. Il portale web ha permesso di chiarire le modalit\`{a} di visualizzazione delle informazioni per quanto riguarda la gestione delle fermate e la gestione delle linee. 
 
 \subsection{Testing}
 La pianificazione del testing prevede tre tipologie di testing:
